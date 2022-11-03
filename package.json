@@ -42,6 +42,7 @@
     "@tensorflow-models/blazeface": "0.0.7",
     "@tensorflow/tfjs-converter": "1.7.4",
     "@tensorflow/tfjs-core": "1.7.4",
+    "@woven-dojo/dojo-frontend-common": "^1.1.18",
     "bowser": "2.11.0",
     "classnames": "2.3.1",
     "core-js": "3.18.2",

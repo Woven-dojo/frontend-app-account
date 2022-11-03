@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom';
 import { Route, Switch } from 'react-router-dom';
 
 import Header, { messages as headerMessages } from '@edx/frontend-component-header';
-import Footer, { messages as footerMessages } from '@edx/frontend-component-footer';
+import { Footer } from '@woven-dojo/dojo-frontend-common/dist/components';
 
 import configureStore from './data/configureStore';
 import AccountSettingsPage, { NotFoundPage } from './account-settings';
@@ -36,7 +36,7 @@ subscribe(APP_READY, () => {
               <Route path="*" component={NotFoundPage} />
             </Switch>
           </main>
-          <Footer />
+          <Footer left={`Copyright ${new Date().getFullYear()} Dojo. All rights reserved`} className="dojo-footer" />
         </div>
       </Switch>
     </AppProvider>,
@@ -52,7 +52,6 @@ initialize({
   messages: [
     appMessages,
     headerMessages,
-    footerMessages,
   ],
   requireAuthenticatedUser: true,
   hydrateAuthenticatedUser: true,
