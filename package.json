@@ -25,15 +25,13 @@
     "access": "public"
   },
   "browserslist": [
-    "last 2 versions",
-    "ie 11"
+    "defaults",
+    "not IE 11"
   ],
   "dependencies": {
     "@edx/brand": "npm:@edx/brand-openedx@1.1.0",
-    "@edx/frontend-component-footer": "10.1.6",
-    "@edx/frontend-component-header": "^2.4.3",
     "@edx/frontend-platform": "1.12.7",
-    "@edx/paragon": "16.1.0",
+    "@edx/paragon": "^19.25.1",
     "@fortawesome/fontawesome-svg-core": "1.2.36",
     "@fortawesome/free-brands-svg-icons": "5.15.4",
     "@fortawesome/free-regular-svg-icons": "5.15.4",
@@ -42,7 +40,7 @@
     "@tensorflow-models/blazeface": "0.0.7",
     "@tensorflow/tfjs-converter": "1.7.4",
     "@tensorflow/tfjs-core": "1.7.4",
-    "@woven-dojo/dojo-frontend-common": "^1.1.18",
+    "@woven-dojo/dojo-frontend-common": "^1.1.21",
     "bowser": "2.11.0",
     "classnames": "2.3.1",
     "core-js": "3.18.2",
