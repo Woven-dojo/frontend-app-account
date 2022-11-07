@@ -48,10 +48,6 @@ subscribe(APP_READY, () => {
                 href: `${BASE_URL}/account/settings`,
               },
               {
-                label: 'Order History',
-                href: ORDER_HISTORY_URL,
-              },
-              {
                 label: 'Logout',
                 href: LOGOUT_URL,
               },
