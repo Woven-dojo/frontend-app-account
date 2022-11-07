@@ -32,7 +32,7 @@ subscribe(APP_READY, () => {
         <div className="d-flex flex-column" style={{ minHeight: '100vh' }}>
           <Header
             logoDestination={`${BASE_URL}/dashboard`}
-            logoDestinationTarget='_self'
+            logoDestinationTarget="_self"
             username={username}
             userMenu={[
               {
@@ -60,7 +60,7 @@ subscribe(APP_READY, () => {
               {
                 label: 'Courses',
                 href: `${BASE_URL}/dashboard`,
-                target: '_self'
+                target: '_self',
               },
             ]}
           />
