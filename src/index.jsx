@@ -23,7 +23,7 @@ import appMessages from './i18n';
 import './index.scss';
 
 subscribe(APP_READY, () => {
-  const { BASE_URL, ORDER_HISTORY_URL, LOGOUT_URL } = getConfig();
+  const { BASE_URL, LOGOUT_URL } = getConfig();
   const { username } = getAuthenticatedUser();
   ReactDOM.render(
     <AppProvider store={configureStore()}>
