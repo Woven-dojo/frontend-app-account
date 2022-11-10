@@ -9,6 +9,11 @@ $fa-font-path: "~font-awesome/fonts";
 @import "./account-settings/style";
 @import "./id-verification/id-verification";
 
+@import "@woven-dojo/dojo-admin-brand/paragon/fonts";
+@import "@woven-dojo/dojo-admin-brand/paragon/variables";
+@import "@woven-dojo/dojo-admin-brand/paragon/mixins";
+@import "@woven-dojo/dojo-admin-brand/paragon/overrides";
+
 .word-break-all {
   word-break: break-all !important;
 }
@@ -59,8 +64,4 @@ $fa-font-path: "~font-awesome/fonts";
   label {
     font-weight: normal;
   }
-}
-
-.dojo-footer .container {
-  max-width: 100%;
 }

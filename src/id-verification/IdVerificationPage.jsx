@@ -49,7 +49,7 @@ function IdVerificationPage(props) {
     <>
       {/* If user reloads, redirect to the beginning of the process */}
       <Redirect to={`${path}/review-requirements`} />
-      <div className="page__id-verification container-fluid py-5">
+      <div className="page__id-verification container-mw-lg container-fluid py-5">
         <div className="row">
           <div className="col-lg-6 col-md-8">
             <VerifiedNameContextProvider>

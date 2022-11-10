@@ -68,7 +68,7 @@ subscribe(APP_READY, () => {
               <Route path="*" component={NotFoundPage} />
             </Switch>
           </main>
-          <Footer left={`Copyright ${new Date().getFullYear()} Dojo. All rights reserved`} className="dojo-footer" />
+          <Footer left={`Copyright ${new Date().getFullYear()} Dojo. All rights reserved`} />
         </div>
       </Switch>
     </AppProvider>,
