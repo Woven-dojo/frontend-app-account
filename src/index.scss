@@ -5,11 +5,14 @@ $fa-font-path: "~font-awesome/fonts";
 @import "~@edx/brand/paragon/variables";
 @import "~@edx/paragon/scss/core/core";
 @import "~@edx/brand/paragon/overrides";
-@import "~@edx/frontend-component-header/dist/index";
-@import "~@edx/frontend-component-footer/dist/footer";
 
 @import "./account-settings/style";
 @import "./id-verification/id-verification";
+
+@import "@woven-dojo/dojo-admin-brand/paragon/fonts";
+@import "@woven-dojo/dojo-admin-brand/paragon/variables";
+@import "@woven-dojo/dojo-admin-brand/paragon/mixins";
+@import "@woven-dojo/dojo-admin-brand/paragon/overrides";
 
 .word-break-all {
   word-break: break-all !important;
