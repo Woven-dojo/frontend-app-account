@@ -1,30 +1,26 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
-import "formdata-polyfill";
-import { AppProvider, ErrorPage } from "@edx/frontend-platform/react";
+import 'formdata-polyfill';
+import { AppProvider, ErrorPage } from '@edx/frontend-platform/react';
 import {
-  subscribe,
-  initialize,
-  APP_INIT_ERROR,
-  APP_READY,
-  mergeConfig,
-} from "@edx/frontend-platform";
-import React from "react";
-import ReactDOM from "react-dom";
-import { Route, Switch } from "react-router-dom";
-import { getConfig } from "@edx/frontend-platform/config";
-import { getAuthenticatedUser } from "@edx/frontend-platform/auth";
+  subscribe, initialize, APP_INIT_ERROR, APP_READY, mergeConfig,
+} from '@edx/frontend-platform';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Route, Switch } from 'react-router-dom';
+import { getConfig } from '@edx/frontend-platform/config';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
-import { Footer, Header } from "@woven-dojo/dojo-frontend-ui";
+import { Footer, Header } from '@woven-dojo/dojo-frontend-ui';
 
-import configureStore from "./data/configureStore";
-import AccountSettingsPage, { NotFoundPage } from "./account-settings";
-import IdVerificationPage from "./id-verification";
-import CoachingConsent from "./account-settings/coaching/CoachingConsent";
-import appMessages from "./i18n";
+import configureStore from './data/configureStore';
+import AccountSettingsPage, { NotFoundPage } from './account-settings';
+import IdVerificationPage from './id-verification';
+import CoachingConsent from './account-settings/coaching/CoachingConsent';
+import appMessages from './i18n';
 
-import "./index.scss";
+import './index.scss';
 
 subscribe(APP_READY, () => {
   const { BASE_URL, LOGOUT_URL } = getConfig();
@@ -33,34 +29,34 @@ subscribe(APP_READY, () => {
     <AppProvider store={configureStore()}>
       <Switch>
         <Route path="/coaching_consent" component={CoachingConsent} />
-        <div className="d-flex flex-column" style={{ minHeight: "100vh" }}>
+        <div className="d-flex flex-column" style={{ minHeight: '100vh' }}>
           <Header
             logoDestination={`${BASE_URL}/dashboard`}
             logoDestinationTarget="_self"
             username={username}
             userMenu={[
               {
-                label: "Dashboard",
+                label: 'Dashboard',
                 href: `${BASE_URL}/dashboard`,
               },
               {
-                label: "Profile",
+                label: 'Profile',
                 href: `${BASE_URL}/u/${username}`,
               },
               {
-                label: "Account",
+                label: 'Account',
                 href: `${BASE_URL}/account/settings`,
               },
               {
-                label: "Logout",
+                label: 'Logout',
                 href: LOGOUT_URL,
               },
             ]}
             actionMenu={[
               {
-                label: "Courses",
+                label: 'Courses',
                 href: `${BASE_URL}/dashboard`,
-                target: "_self",
+                target: '_self',
               },
             ]}
           />
@@ -72,21 +68,16 @@ subscribe(APP_READY, () => {
               <Route path="*" component={NotFoundPage} />
             </Switch>
           </main>
-          <Footer
-            left={`Copyright ${new Date().getFullYear()} Dojo. All rights reserved`}
-          />
+          <Footer left={`Copyright ${new Date().getFullYear()} Dojo. All rights reserved`} />
         </div>
       </Switch>
     </AppProvider>,
-    document.getElementById("root")
+    document.getElementById('root'),
   );
 });
 
 subscribe(APP_INIT_ERROR, (error) => {
-  ReactDOM.render(
-    <ErrorPage message={error.message} />,
-    document.getElementById("root")
-  );
+  ReactDOM.render(<ErrorPage message={error.message} />, document.getElementById('root'));
 });
 
 initialize({
@@ -95,16 +86,12 @@ initialize({
   hydrateAuthenticatedUser: true,
   handlers: {
     config: () => {
-      mergeConfig(
-        {
-          SUPPORT_URL: process.env.SUPPORT_URL,
-          COACHING_ENABLED: process.env.COACHING_ENABLED || false,
-          ENABLE_DEMOGRAPHICS_COLLECTION:
-            process.env.ENABLE_DEMOGRAPHICS_COLLECTION || false,
-          DEMOGRAPHICS_BASE_URL: process.env.DEMOGRAPHICS_BASE_URL,
-        },
-        "App loadConfig override handler"
-      );
+      mergeConfig({
+        SUPPORT_URL: process.env.SUPPORT_URL,
+        COACHING_ENABLED: (process.env.COACHING_ENABLED || false),
+        ENABLE_DEMOGRAPHICS_COLLECTION: (process.env.ENABLE_DEMOGRAPHICS_COLLECTION || false),
+        DEMOGRAPHICS_BASE_URL: process.env.DEMOGRAPHICS_BASE_URL,
+      }, 'App loadConfig override handler');
     },
   },
 });
