@@ -12,7 +12,7 @@ import { Route, Switch } from 'react-router-dom';
 import { getConfig } from '@edx/frontend-platform/config';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
-import { Header, Footer } from '@woven-dojo/dojo-frontend-common/dist/components';
+import { Footer, Header } from '@woven-dojo/dojo-frontend-ui';
 
 import configureStore from './data/configureStore';
 import AccountSettingsPage, { NotFoundPage } from './account-settings';
